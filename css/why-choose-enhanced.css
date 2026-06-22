@@ -1,0 +1,144 @@
+/* ============================================================
+   Enhanced "Why Choose Us" section — matched to the about page
+   Scoped variables so it renders identically on the homepage
+   without altering the global combine.css styles.
+   ============================================================ */
+.why-choose-us-section {
+    --wc-primary-dark: #705732;
+    --wc-primary-medium: #ac864c;
+    --wc-accent-orange: #B08D57;
+    --wc-text-dark: #3b2a11;
+    --wc-text-light: #666;
+    --wc-bg-white: #fff;
+    --wc-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --wc-gradient-primary: linear-gradient(135deg, #705732, #ac864c);
+    --wc-gradient-feature-top: linear-gradient(to right, #705732, #B08D57);
+
+    padding: 6rem 0;
+    background: var(--wc-bg-white);
+}
+
+.why-choose-us-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.why-choose-us-section .section-header h2 {
+    font-size: 2.5rem;
+    color: var(--wc-text-dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.why-choose-us-section .section-header p {
+    font-size: 1.1rem;
+    color: var(--wc-text-light);
+}
+
+.why-choose-us-section .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.why-choose-us-section .feature-item {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    background: var(--wc-bg-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-us-section .feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--wc-gradient-feature-top);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease;
+}
+
+.why-choose-us-section .feature-item:hover::before {
+    transform: scaleX(1);
+}
+
+.why-choose-us-section .feature-item:hover {
+    border-color: var(--wc-primary-medium);
+    transform: translateY(-10px);
+    background: rgba(176, 141, 87, 0.04);
+    box-shadow: var(--wc-shadow-md);
+}
+
+.why-choose-us-section .feature-item .icon {
+    width: 80px;
+    height: 80px;
+    background: var(--wc-gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-us-section .feature-item .icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.why-choose-us-section .feature-item:hover .icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.why-choose-us-section .feature-item:hover .icon::before {
+    transform: scale(1);
+}
+
+.why-choose-us-section .feature-item .icon i {
+    font-size: 2rem;
+    color: var(--wc-bg-white);
+    position: relative;
+    z-index: 2;
+}
+
+.why-choose-us-section .feature-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--wc-text-dark);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.why-choose-us-section .feature-item:hover h3 {
+    color: var(--wc-primary-medium);
+}
+
+.why-choose-us-section .feature-item p {
+    color: var(--wc-text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .why-choose-us-section .section-header h2 {
+        font-size: 2rem;
+    }
+}

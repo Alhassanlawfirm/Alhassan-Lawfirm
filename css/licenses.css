@@ -1,0 +1,65 @@
+/* Additional CSS for Licenses Section */
+
+.licenses-section {
+    background-color: var(--neutral-color);
+    padding: var(--section-padding);
+}
+
+.licenses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.license-item {
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.license-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.license-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.license-icon i {
+    font-size: 36px;
+    color: var(--white);
+}
+
+.license-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.license-item p {
+    color: var(--text-light);
+}
+
+/* Responsive styles for licenses section */
+@media (max-width: 992px) {
+    .licenses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .licenses-grid {
+        grid-template-columns: 1fr;
+    }
+}

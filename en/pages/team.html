@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Al-Hassan Law Firm</title>
+    <link rel="stylesheet" href="../../css/combine.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark:  #705732;
+            --primary-medium: #ac864c;
+            --primary-light: #b99c6f;
+            --primary-lighter: #b9a588;
+            --primary-lightest:#d6c5ad;
+            --accent-gold: #895f20;
+            --accent-orange:#B08D57;
+            --accent-red: #B08D57;
+            --text-dark: #3b2a11;
+            --text-medium: #555;
+            --text-light: #666;
+            --bg-white: #fff;
+            --bg-light: #f8f9fa;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-dark: rgba(0, 0, 0, 0.2);
+            --gradient-primary: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+            --gradient-accent: linear-gradient(to right, var(--primary-medium), var(--accent-orange));
+            --gradient-timeline: linear-gradient(to bottom, var(--primary-light), var(--primary-dark));
+            --gradient-feature-top: linear-gradient(to right, var(--primary-dark), var(--accent-orange));
+            --gradient-member-top: linear-gradient(to right,#805617, #B08D57);
+            --gradient-social: linear-gradient(135deg, #B08D57,#B08D57);
+            --gradient-values-icon: linear-gradient(135deg, #B08D57,#B08D57);
+            --shadow-sm: 0 4px 20px var(--shadow-light);
+            --shadow-md: 0 8px 30px var(--shadow-medium);
+            --shadow-lg: 0 15px 60px var(--shadow-dark);
+        }
+
+        /* LTR Override for English pages */
+        .team-intro-section,
+        .team-section,
+        .team-values-section,
+        .join-team-section {
+            direction: ltr !important;
+            unicode-bidi: isolate-override;
+        }
+
+        .team-intro-section .team-intro-text,
+        .team-section .member-info,
+        .team-values-section .value-item,
+        .join-team-section .join-team-text {
+            direction: ltr !important;
+            unicode-bidi: isolate-override;
+            text-align: left !important;
+        }
+
+        .team-intro-section .team-intro-text h2,
+        .team-intro-section .team-intro-text p,
+        .team-section .member-info h3,
+        .team-section .member-info p,
+        .team-values-section .value-item h3,
+        .team-values-section .value-item p,
+        .join-team-section .join-team-text h2,
+        .join-team-section .join-team-text p {
+            text-align: left !important;
+        }
+
+        /* Fix underline position for LTR */
+        .team-intro-text h2::after,
+        .join-team-text h2::after {
+            right: auto !important;
+            left: 0 !important;
+        }
+
+        /* Team Introduction Section */
+        .team-intro-section {
+            padding: 6rem 0;
+            background: var(--bg-white);
+            position: relative;
+        }
+
+        .team-intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .team-intro-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+        }
+
+        .team-intro-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .team-intro-image:hover::before { opacity: 0.3; }
+        .team-intro-image:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+        .team-intro-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+            display: block;
+        }
+
+        .team-intro-image:hover img { transform: scale(1.05); }
+
+        .team-intro-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            position: relative;
+            line-height: 1.2;
+        }
+
+        .team-intro-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+
+        .team-intro-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            transition: all 0.3s ease;
+        }
+
+        .team-intro-text p:hover { color: var(--text-medium); }
+
+        /* Team Section */
+        .team-section {
+            padding: 6rem 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .team-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 25px;
+            background: transparent;
+            border: 2px solid var(--primary-medium);
+            border-radius: 25px;
+            color: var(--primary-medium);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .filter-btn.active::before,
+        .filter-btn:hover::before { left: 0; }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            color: var(--bg-white);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .filter-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: var(--bg-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-member-top);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.4s ease;
+            z-index: 3;
+        }
+
+        .team-member:hover::before { transform: scaleX(1); }
+
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(172, 134, 76, 0.2);
+        }
+
+        .member-image {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .team-member:hover .member-image img { transform: scale(1.05); }
+
+        .member-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .member-image::after { opacity: 0.7; }
+
+        .member-info {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .member-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            text-align: center !important;
+        }
+
+        .team-member:hover .member-info h3 { color: var(--primary-medium); }
+
+        .member-info .position {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: block;
+            font-size: 1.1rem;
+            text-align: center !important;
+        }
+
+        .member-info p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: justify !important;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-light);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-social);
+            border-radius: 50%;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover::before { transform: scale(1); }
+
+        .social-links a:hover {
+            color: var(--bg-white);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(176, 141, 87, 0.3);
+        }
+
+        .social-links a i {
+            position: relative;
+            z-index: 2;
+            font-size: 1.2rem;
+        }
+
+        /* Team Values Section */
+        .team-values-section {
+            padding: 6rem 0;
+            background: var(--bg-white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            background: var(--bg-white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .value-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-feature-top);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover::before { transform: scaleX(1); }
+
+        .value-item:hover {
+            border-color: var(--primary-medium);
+            transform: translateY(-10px);
+            background: rgba(172, 134, 76, 0.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-item .icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-values-icon);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-item .icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover .icon { transform: scale(1.1) rotate(10deg); }
+        .value-item:hover .icon::before { transform: scale(1); }
+
+        .value-item .icon i {
+            font-size: 2rem;
+            color: var(--bg-white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-item h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            text-align: center !important;
+        }
+
+        .value-item:hover h3 { color: var(--primary-medium); }
+
+        .value-item p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            text-align: center !important;
+        }
+
+        /* Join Team Section */
+        .join-team-section {
+            padding: 6rem 0;
+            background: var(--bg-light);
+        }
+
+        .join-team-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .join-team-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+        }
+
+        .join-team-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .join-team-image:hover::before { opacity: 0.3; }
+        .join-team-image:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+        .join-team-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+            display: block;
+        }
+
+        .join-team-image:hover img { transform: scale(1.05); }
+
+        .join-team-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            position: relative;
+            line-height: 1.2;
+        }
+
+        .join-team-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+
+        .join-team-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            transition: all 0.3s ease;
+        }
+
+        .join-team-text p:hover { color: var(--text-medium); }
+
+        .primary-btn {
+            background: var(--gradient-primary);
+            color: var(--bg-white);
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .primary-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .primary-btn:hover::before { left: 100%; }
+        .primary-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CTA Section */
+        .legal-help-section {
+            background: linear-gradient(135deg, #684d33, #A07D5A, #cca987);
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .legal-help-title { font-size: 2.5rem; margin-bottom: 20px; font-weight: bold; line-height: 1.3; color: #fff; }
+        .legal-help-text { font-size: 1.2rem; margin-bottom: 40px; color: #fff; }
+        .legal-help-buttons { display: flex; flex-direction: column; gap: 15px; justify-content: center; align-items: center; }
+        @media (min-width: 600px) { .legal-help-buttons { flex-direction: row; } }
+        .legal-help-primary { background-color: #cca987; color: #fff; text-decoration: none; padding: 15px 35px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; transition: background 0.3s ease, transform 0.2s ease; }
+        .legal-help-primary:hover { background-color: #ffffff; transform: scale(1.05); }
+        .legal-help-secondary { background-color: transparent; border: 2px solid #fff; color: #fff; text-decoration: none; padding: 14px 32px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; transition: background 0.3s ease, transform 0.2s ease; }
+        .legal-help-secondary:hover { background-color: rgb(255, 255, 255); transform: scale(1.05); }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .team-intro-content,
+            .join-team-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .team-intro-image,
+            .join-team-image { order: 1; }
+
+            .team-intro-text,
+            .join-team-text { order: 2; }
+
+            .team-intro-text h2::after,
+            .join-team-text h2::after {
+                left: 50% !important;
+                transform: translateX(-50%);
+            }
+
+            .team-intro-text h2,
+            .team-intro-text p,
+            .join-team-text h2,
+            .join-team-text p {
+                text-align: center !important;
+            }
+
+            .team-intro-image img,
+            .join-team-image img { height: 300px; }
+
+            .section-header h2,
+            .team-intro-text h2,
+            .join-team-text h2 { font-size: 2rem; }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .team-filters { gap: 0.5rem; }
+
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .member-info { padding: 2rem 1.5rem; }
+            .value-item { padding: 2rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .team-intro-text h2,
+            .join-team-text h2 { font-size: 1.8rem; }
+
+            .team-intro-text p,
+            .join-team-text p { font-size: 1rem; }
+
+            .member-info { padding: 1.5rem 1rem; }
+            .value-item { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../../images/logo.png" alt="Al-Hassan Law Firm">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Our Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="services/legal-consultations.html">Legal Consultations</a></li>
+                                <li><a href="services/litigation.html">Litigation & Disputes</a></li>
+                                <li><a href="services/bankruptcy.html">Bankruptcy Applications</a></li>
+                                <li><a href="services/contract-drafting.html">Contract Drafting</a></li>
+                                <li><a href="services/intellectual-property.html">Intellectual Property Registration</a></li>
+                                <li><a href="services/foreign-investment.html">Foreign Investment & Company Establishment</a></li>
+                                <li><a href="services/legal-management.html">Legal Management for Enterprises</a></li>
+                                <li><a href="services/debt-collection.html">Debt Collection</a></li>
+                                <li><a href="services/franchise.html">Franchise Agreements</a></li>
+                                <li><a href="services/documentation.html">Documentation Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="specializations.html">Areas of Expertise</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="specializations/industry-energy.html">Industry & Energy</a></li>
+                                <li><a href="specializations/entertainment-cinema.html">Entertainment & Cinema</a></li>
+                                <li><a href="specializations/real-estate-contracting.html">Real Estate & Contracting</a></li>
+                                <li><a href="specializations/finance-banking.html">Finance & Banking</a></li>
+                                <li><a href="specializations/labor-employment.html">Labor & Employment</a></li>
+                                <li><a href="specializations/healthcare-insurance.html">Healthcare & Insurance</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="team.html" class="active">Our Team</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons">
+                    <a href="consultation.html" class="consultation-btn">Book a Consultation</a>
+                    <div class="language-switch">
+                        <a href="../../pages/team.html">العربية</a>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container"></div>
+    </section>
+
+    <!-- Page Header -->
+    <section class="section-header">
+        <div class="container">             
+            <h2>Our Team</h2>                      
+        </div>
+    </section>
+
+    <!-- Team Introduction Section -->
+    <section class="team-intro-section fade-in">
+        <div class="container">
+            <div class="team-intro-content">
+                <div class="team-intro-image">
+                    <img src="../../images/ghost/ETAaenwXsAEqpVu.jpg" alt="Our Team - Al-Hassan Law Firm" style="object-fit: cover;">
+                </div>
+                <div class="team-intro-text">
+                    <h2>Our Distinguished Team</h2>
+                    <p>Al-Hassan Law Firm includes a select group of experienced and competent lawyers and legal consultants in various legal fields. Our team is characterized by high professionalism and commitment to professional ethics.</p>
+                    <p>We believe that success is achieved through teamwork and fruitful cooperation among team members. Each member of our team contributes their expertise and specialized skills to provide the best legal solutions for our clients.</p>
+                    <p>An integrated team that combines deep legal expertise and a clear understanding of the needs of the local and global market, enabling us to provide comprehensive and advanced legal services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Team Members</h2>
+                <p>Meet our team of specialized lawyers and legal consultants</p>
+            </div>
+            
+            <div class="team-filters">
+                <button class="filter-btn active" data-filter="all"><span>All</span></button>
+                <button class="filter-btn" data-filter="partners"><span>Partners</span></button>
+                <button class="filter-btn" data-filter="lawyers"><span>Lawyers</span></button>
+                <button class="filter-btn" data-filter="consultants"><span>Consultants</span></button>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member" data-category="partners">
+                    <div class="member-image">
+                        <img src="../../images/ghost/ETAaenwXsAEqpVu.jpg" alt="Mohammed Youssef Al-Hassan" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Mohammed Youssef Al-Hassan</h3>
+                        <span class="position">Lawyer & Founder</span>
+                        <p>A lawyer with extensive experience in commercial and corporate law, holding a Master's degree in Commercial Law. He has an impressive track record of success in representing major companies and institutions.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member" data-category="partners">
+                    <div class="member-image">
+                        <img src="../../images/ghost/Nd-z56aoaUS7gEo-.jpg" alt="Ahmed Abdullah" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Ahmed Abdullah</h3>
+                        <span class="position">Partner Lawyer</span>
+                        <p>Specialized in labor and employment cases and social insurance, with over 15 years of experience in the legal field. He has an excellent reputation in resolving labor disputes and insurance matters.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member" data-category="consultants">
+                    <div class="member-image">
+                        <img src="../../images/ghost/female.jpg" alt="Sarah Mohammed" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Mohammed</h3>
+                        <span class="position">Legal Consultant</span>
+                        <p>Specialized in intellectual property rights and trademarks, holding a specialized certificate in intellectual property. She has extensive experience in registering and protecting intellectual property rights for companies and institutions.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member" data-category="lawyers">
+                    <div class="member-image">
+                        <img src="../../images/ghost/ETAaenwXsAEqpVu.jpg" alt="Khalid Al-Omari" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Khalid Al-Omari</h3>
+                        <span class="position">Lawyer</span>
+                        <p>Specialized in civil and commercial cases, with extensive experience in representing clients before various courts. He is distinguished by his ability to negotiate and resolve disputes amicably and effectively.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-member" data-category="consultants">
+                    <div class="member-image">
+                        <img src="../../images/ghost/female.jpg" alt="Fatima Al-Zahra" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Fatima Al-Zahra</h3>
+                        <span class="position">Legal Consultant</span>
+                        <p>Specialized in banking and financial law, with experience in legal consultations for financial institutions and banks. She has a deep understanding of Saudi and international financial and banking systems.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 6 -->
+                <div class="team-member" data-category="lawyers">
+                    <div class="member-image">
+                        <img src="../../images/ghost/Nd-z56aoaUS7gEo-.jpg" alt="Abdulrahman Al-Saeed" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Abdulrahman Al-Saeed</h3>
+                        <span class="position">Lawyer</span>
+                        <p>Specialized in real estate and contracting cases, with experience in drafting and reviewing real estate contracts and construction agreements. He has extensive knowledge of real estate development and construction laws.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 7 -->
+                <div class="team-member" data-category="consultants">
+                    <div class="member-image">
+                        <img src="../../images/ghost/female.jpg" alt="Noura Al-Fahd" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Noura Al-Fahd</h3>
+                        <span class="position">Legal Consultant</span>
+                        <p>Specialized in corporate law and foreign investment, with experience in company establishment and preparing internal regulations. She helps foreign investors understand the Saudi legal environment.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 8 -->
+                <div class="team-member" data-category="lawyers">
+                    <div class="member-image">
+                        <img src="../../images/ghost/ETAaenwXsAEqpVu.jpg" alt="Sultan Al-Khalidi" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sultan Al-Khalidi</h3>
+                        <span class="position">Lawyer</span>
+                        <p>Specialized in commercial arbitration cases, with experience in representing clients in local and international arbitration disputes. He has extensive experience in resolving complex commercial disputes.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 9 -->
+                <div class="team-member" data-category="consultants">
+                    <div class="member-image">
+                        <img src="../../images/ghost/female.jpg" alt="Layla Al-Harbi" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3>Layla Al-Harbi</h3>
+                        <span class="position">Legal Consultant</span>
+                        <p>Specialized in healthcare and insurance law, with experience in legal consultations for healthcare institutions. She has a deep understanding of the health and insurance systems in the Kingdom.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Values Section -->
+    <section class="team-values-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Team Values</h2>
+                <p>We are committed to a set of values and principles that guide our work and define our professional identity</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Justice</h3>
+                    <p>We always strive to achieve justice and fairness in all cases we handle, and we adhere to ethical and legal principles in all our dealings.</p>
+                </div>
+                <div class="value-item">
+                    <div class="icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We adhere to the highest standards of integrity and professional ethics in all our dealings, and we maintain transparency and honesty with our clients at all times.</p>
+                </div>
+                <div class="value-item">
+                    <div class="icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Confidentiality</h3>
+                    <p>We maintain the confidentiality of our clients' information and commit to complete privacy, and we ensure the protection of all sensitive data and information we handle.</p>
+                </div>
+                <div class="value-item">
+                    <div class="icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Continuous Development</h3>
+                    <p>We always seek to develop our skills and legal knowledge to provide the best services, and we keep pace with the latest developments in the legal and legislative field.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Team Section -->
+    <section class="join-team-section fade-in">
+        <div class="container">
+            <div class="join-team-content">
+                <div class="join-team-text">
+                    <h2>Join Our Team</h2>
+                    <p>We are always looking for distinguished legal talents to join the Al-Hassan Law Firm team. If you have the necessary skills and experience and wish to work in a professional and advanced environment, we welcome you to join us.</p>
+                    <p>We provide our employees with a stimulating work environment that supports professional and personal growth, with continuous training and development opportunities. We also believe in the importance of work-life balance to ensure productivity and job satisfaction.</p>
+                    <p>To apply for available positions, please send your CV and required documents to: <strong>careers@alhassanlawfirm.com</strong></p>
+                    <a href="careers.html" class="primary-btn">Available Positions</a>
+                </div>
+                <div class="join-team-image">
+                    <img src="../../images/ghost/ETAaenwXsAEqpVu.jpg" alt="Join Our Team" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="legal-help-section" style="margin:40px 0;">
+        <h2 class="legal-help-title">?Do You Need Legal Consultation</h2>
+        <p class="legal-help-text">Our team of lawyers and legal consultants is ready to assist you</p>
+        <div class="legal-help-buttons">
+            <a href="consultation.html" class="legal-help-primary">Book a Legal Consultation</a>
+            <a href="tel:+966503169240" class="legal-help-secondary">Call Us Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../images/logo.png" alt="Al-Hassan Law Firm">
+                    <p>Al-Hassan Law Firm - Professional Legal Solutions</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="specializations.html">Areas of Expertise</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone"></i> <span dir="ltr">+966 50 316 9240</span></p>
+                    <p><i class="fas fa-envelope"></i> Info@alhassanlawfirm.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kingdom of Saudi Arabia, Al-Ahsa, Sixty Street</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Al-Hassan Law Firm. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Team Filtering with enhanced animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    teamMembers.forEach((member, index) => {
+                        if (filterValue === 'all' || member.getAttribute('data-category') === filterValue) {
+                            setTimeout(() => {
+                                member.style.display = 'block';
+                                member.style.opacity = '0';
+                                member.style.transform = 'translateY(20px)';
+                                setTimeout(() => {
+                                    member.style.opacity = '1';
+                                    member.style.transform = 'translateY(0)';
+                                }, 50);
+                            }, index * 100);
+                        } else {
+                            member.style.opacity = '0';
+                            member.style.transform = 'translateY(-20px)';
+                            setTimeout(() => {
+                                member.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            teamMembers.forEach(member => {
+                member.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>

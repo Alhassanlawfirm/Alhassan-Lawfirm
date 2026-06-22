@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Article - Al-Hassan Law Firm</title>
+    <link rel="stylesheet" href="../../css/combine.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #705732;
+            --text-light: #666;
+            --text-color: #333;
+            --text-dark: #3b2a11;
+        }
+
+        /* LTR Override for English pages */
+        .post-container,
+        .page-banner,
+        .section-header {
+            direction: ltr !important;
+            unicode-bidi: isolate-override;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .post-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .post-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .post-meta {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .post-content {
+            line-height: 1.8;
+            color: var(--text-color);
+            text-align: left;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .post-content h2,
+        .post-content h3,
+        .post-content h4 {
+            text-align: left;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .post-content ul,
+        .post-content ol {
+            text-align: left;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        #post-loading {
+            text-align: center;
+            padding: 50px;
+        }
+
+        /* Back to blog link */
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            color: var(--text-dark);
+        }
+
+        .back-to-blog i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-blog:hover i {
+            transform: translateX(-5px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .post-container {
+                padding: 25px;
+                margin: 20px auto;
+            }
+
+            .post-title {
+                font-size: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../../images/logo.png" alt="Al-Hassan Law Firm">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="specializations.html">Areas of Expertise</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="consultation.html" class="consultation-btn">Book a Consultation</a>
+                <div class="language-switch">
+                    <a href="../../pages/blog.html">العربية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- BLOG POST CONTAINER -->
+<main>
+    <section class="page-banner">
+        <div class="container">
+            <section class="container">
+                <section class="section-header">
+                    <h2>Legal Blog</h2>
+                </section>
+            </section>
+        </div>
+    </section>
+
+    <div class="container">
+        <a href="blog.html" class="back-to-blog">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+        
+        <div id="post-loading">
+            <p>Loading article...</p>
+        </div>
+        <div id="post-container" class="post-container" style="display: none;">
+            <h1 id="post-title" class="post-title"></h1>
+            <div id="post-meta" class="post-meta"></div>
+            <div id="post-content" class="post-content"></div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../../images/logo.png" alt="Al-Hassan Law Firm">
+                <p>Al-Hassan Law Firm - Professional Legal Solutions</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="specializations.html">Areas of Expertise</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-phone"></i> <span dir="ltr">+966 50 316 9240</span></p>
+                <p><i class="fas fa-envelope"></i> Info@alhassanlawfirm.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Kingdom of Saudi Arabia, Al-Ahsa, Sixty Street</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Al-Hassan Law Firm. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // Get post ID from URL (passed as ?id=POST_ID)
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+
+    if (!postId) {
+        document.getElementById('post-loading').innerHTML = '<p>Article not found.</p>';
+    } else {
+        // Fetch post from Blogger JSON API
+        const script = document.createElement('script');
+        script.src = `https://alhassanlawfirm.blogspot.com/feeds/posts/default/${postId}?alt=json-in-script&callback=renderPost`;
+        document.body.appendChild(script);
+    }
+
+    function renderPost(data) {
+        const post = data.entry;
+        if (!post) {
+            document.getElementById('post-loading').innerHTML = '<p>An error occurred while loading the article.</p>';
+            return;
+        }
+
+        const title = post.title.$t;
+        const content = post.content ? post.content.$t : post.summary.$t;
+        const published = new Date(post.published.$t).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Update DOM
+        document.getElementById('post-title').textContent = title;
+        document.getElementById('post-meta').textContent = `Published on: ${published}`;
+        document.getElementById('post-content').innerHTML = content;
+
+        // Update page title
+        document.title = `${title} - Al-Hassan Law Firm`;
+
+        // Show post, hide loader
+        document.getElementById('post-loading').style.display = 'none';
+        document.getElementById('post-container').style.display = 'block';
+
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</body>
+</html>
