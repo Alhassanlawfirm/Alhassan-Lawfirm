@@ -241,13 +241,16 @@
         }
 
         .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .team-member {
+            width: 350px;
+            max-width: 100%;
             background: var(--bg-white);
             border-radius: 15px;
             overflow: hidden;
@@ -988,7 +991,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="../images/logo.png" alt="مكتب الحسن للمحاماة">
-                    <p>مكتب الحسن للمحاماة - حلول قانونية احترافية</p>
+                    <p>الحسن للمحاماة - حلول قانونية احترافية</p>
                 </div>
                 <div class="footer-links">
                     <h3>روابط سريعة</h3>
