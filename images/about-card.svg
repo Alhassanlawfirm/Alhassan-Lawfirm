@@ -1,0 +1,66 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مكتب الحسن للمحاماة">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#705732"/>
+      <stop offset="55%" stop-color="#8a6a3e"/>
+      <stop offset="100%" stop-color="#5e4829"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e7d3ad"/>
+      <stop offset="100%" stop-color="#c9a86a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- الخلفية -->
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
+  <rect width="600" height="400" fill="url(#glow)"/>
+
+  <!-- إطار زخرفي -->
+  <rect x="18" y="18" width="564" height="364" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.55" rx="6"/>
+  <rect x="26" y="26" width="548" height="348" fill="none" stroke="url(#goldGrad)" stroke-width="0.75" opacity="0.3" rx="4"/>
+
+  <!-- زخرفة زوايا -->
+  <g stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.6" fill="none">
+    <path d="M40 60 L40 40 L60 40"/>
+    <path d="M560 60 L560 40 L540 40"/>
+    <path d="M40 340 L40 360 L60 360"/>
+    <path d="M560 340 L560 360 L540 360"/>
+  </g>
+
+  <!-- ميزان العدالة -->
+  <g transform="translate(300,150)" stroke="url(#goldGrad)" fill="url(#goldGrad)">
+    <!-- العمود -->
+    <rect x="-2.5" y="-70" width="5" height="120" rx="2"/>
+    <!-- القاعدة -->
+    <rect x="-45" y="50" width="90" height="7" rx="3"/>
+    <rect x="-22" y="44" width="44" height="8" rx="3"/>
+    <!-- الذراع الأفقي -->
+    <rect x="-95" y="-72" width="190" height="4.5" rx="2"/>
+    <!-- النقطة العلوية -->
+    <circle cx="0" cy="-74" r="6"/>
+    <!-- خيوط الكفّتين -->
+    <line x1="-90" y1="-70" x2="-90" y2="-38" stroke-width="1.5"/>
+    <line x1="90" y1="-70" x2="90" y2="-38" stroke-width="1.5"/>
+    <line x1="-90" y1="-70" x2="-72" y2="-38" stroke-width="1.5"/>
+    <line x1="-90" y1="-70" x2="-108" y2="-38" stroke-width="1.5"/>
+    <line x1="90" y1="-70" x2="72" y2="-38" stroke-width="1.5"/>
+    <line x1="90" y1="-70" x2="108" y2="-38" stroke-width="1.5"/>
+    <!-- الكفّة اليسرى -->
+    <path d="M-118 -38 A28 14 0 0 0 -62 -38 Z" fill="url(#goldGrad)" opacity="0.92"/>
+    <!-- الكفّة اليمنى -->
+    <path d="M62 -38 A28 14 0 0 0 118 -38 Z" fill="url(#goldGrad)" opacity="0.92"/>
+  </g>
+
+  <!-- اسم المكتب -->
+  <text x="300" y="290" text-anchor="middle" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff" letter-spacing="1">مكتب الحسن للمحاماة</text>
+
+  <!-- فاصل ذهبي -->
+  <rect x="250" y="306" width="100" height="3" rx="1.5" fill="url(#goldGrad)"/>
+
+  <!-- العبارة -->
+  <text x="300" y="338" text-anchor="middle" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="16" fill="#e7d3ad" letter-spacing="0.5">حلول قانونية احترافية</text>
+</svg>
