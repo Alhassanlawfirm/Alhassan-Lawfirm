@@ -1320,3 +1320,33 @@ html.smooth-scroll {
         background: var(--secondary-color); /* Bronze/Gold background */
          color: var(--white);                /* White text */
         }
+/* ===== إخفاء روابط وأقسام السوشال ميديا (لا توجد حسابات حالياً) ===== */
+.social-media,
+.social-links,
+.social-media-section,
+.footer-social,
+.social-icons {
+    display: none !important;
+}
+
+/* ===== إصلاح التمرير الأفقي على الجوال ===== */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+@media (max-width: 992px) {
+    .container,
+    .header-content,
+    .hero-content {
+        max-width: 100%;
+    }
+    /* منع القوائم الفرعية من توسيع الصفحة على الجوال */
+    .dropdown-menu,
+    .submenu {
+        width: auto;
+        min-width: 0;
+    }
+}
