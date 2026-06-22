@@ -356,10 +356,16 @@
         }
 
         .team-preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 2rem;
             margin-top: 3rem;
+        }
+
+        .team-preview-grid .team-member {
+            width: 320px;
+            max-width: 100%;
         }
 
         .team-member {
@@ -1186,42 +1192,6 @@
                         <h3>محمد يوسف الحسن</h3>
                         <span class="position">محامي ومؤسس المكتب</span>
                         <p>محامي ذو خبرة واسعة في مجال القانون التجاري والشركات</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img  style="
-      
-        object-fit:fill;  " src="../images/ghost/Nd-z56aoaUS7gEo-.jpg" alt="أحمد عبدالله">
-                    </div>
-                    <div class="member-info">
-                        <h3>أحمد عبدالله</h3>
-                        <span class="position">محامي شريك</span>
-                        <p>متخصص في قضايا العمل والعمال والتأمينات الاجتماعية</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img style="
-      
-        object-fit:fill;  " src="../images/ghost/female.jpg" alt="سارة محمد">
-
-
-                    </div>
-                    <div class="member-info">
-                        <h3>سارة محمد</h3>
-                        <span class="position">مستشارة قانونية</span>
-                        <p>متخصصة في حقوق الملكية الفكرية والعلامات التجارية</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>

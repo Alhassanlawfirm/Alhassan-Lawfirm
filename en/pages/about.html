@@ -84,7 +84,8 @@
         .team-preview-section .section-header { text-align: center; margin-bottom: 3rem; }
         .team-preview-section .section-header h2 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 1rem; font-weight: 700; }
         .team-preview-section .section-header p { font-size: 1.1rem; color: var(--text-light); }
-        .team-preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .team-preview-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 3rem; }
+        .team-preview-grid .team-member { width: 320px; max-width: 100%; }
         .team-member { background: var(--bg-white); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.4s ease; position: relative; }
         .team-member::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-member-top); transform: scaleX(0); transform-origin: left; transition: all 0.3s ease; z-index: 3; }
         .team-member:hover::before { transform: scaleX(1); }
@@ -391,36 +392,6 @@
                         <h3>Mohammed Youssef Al-Hassan</h3>
                         <span class="position">Lawyer & Founder</span>
                         <p>A lawyer with extensive experience in commercial and corporate law</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img style="object-fit:fill;" src="../../images/ghost/Nd-z56aoaUS7gEo-.jpg" alt="Ahmed Abdullah">
-                    </div>
-                    <div class="member-info">
-                        <h3>Ahmed Abdullah</h3>
-                        <span class="position">Partner Lawyer</span>
-                        <p>Specialized in labor and employment issues and social insurance</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img style="object-fit:fill;" src="../../images/ghost/female.jpg" alt="Sarah Mohammed">
-                    </div>
-                    <div class="member-info">
-                        <h3>Sarah Mohammed</h3>
-                        <span class="position">Legal Consultant</span>
-                        <p>Specialized in intellectual property rights and trademarks</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
