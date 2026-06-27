@@ -37,6 +37,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* إعادة مربعات الاختيار وأزرار الراديو لحجمها الطبيعي داخل النماذج */
+        .form-group input[type="checkbox"],
+        .form-group input[type="radio"] {
+            width: auto !important;
+            margin: 0 0 0 8px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .consultation-form-section .form-group label {
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -55,25 +68,29 @@
                         <li class="dropdown">
                             <a href="services.html">خدماتنا</a>
                             <ul class="dropdown-menu">
-                                <li><a href="services/legal-consultations.html">الاستشارات القانونية</a></li>
-                                <li><a href="services/contract-drafting.html">صياغة العقود</a></li>
-                                <li><a href="services/intellectual-property.html">تسجيل حقوق الملكية الفكرية</a></li>
-                                <li><a href="services/foreign-investment.html">الاستثمار الأجنبي</a></li>
-                                <li><a href="services/company-establishment.html">تأسيس الشركات</a></li>
-                                <li><a href="services/legal-management.html">الإدارة القانونية للمنشآت</a></li>
-                                <li><a href="services/debt-collection.html">تحصيل الديون</a></li>
-                                <li><a href="services/real-estate-documentation.html">خدمات التوثيق العقاري</a></li>
+                                <li><a href="services.html">الاستشارات القانونية</a></li>
+                                <li><a href="services.html">صياغة العقود</a></li>
+                                <li><a href="services.html">تأسيس الشركات</a></li>
+                                <li><a href="services.html">الإدارة القانونية للمنشآت</a></li>
+                                <li><a href="services.html">تحصيل الديون</a></li>
+                                <li><a href="services.html">خدمات التوثيق العقاري</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="specializations.html">مجالات التخصص</a>
                             <ul class="dropdown-menu">
-                                <li><a href="specializations/industry-energy.html">الصناعة والطاقة</a></li>
-                                <li><a href="specializations/entertainment-cinema.html">الترفيه والسينما</a></li>
-                                <li><a href="specializations/real-estate-contracting.html">العقارات والمقاولات</a></li>
-                                <li><a href="specializations/finance-banking.html">المالية والمصرفية</a></li>
-                                <li><a href="specializations/labor-employment.html">العمل والعمال</a></li>
-                                <li><a href="specializations/healthcare-insurance.html">الرعاية الصحية والتأمين</a></li>
+                                <li><a href="specializations.html">الصناعة والطاقة</a></li>
+                                <li><a href="specializations.html">الترفيه والسينما</a></li>
+                                <li><a href="specializations.html">العقارات والمقاولات</a></li>
+                                <li><a href="specializations.html">المالية والمصرفية</a></li>
+                                <li><a href="specializations.html">العمل والعمال</a></li>
+                                <li><a href="specializations.html">الرعاية الصحية والتأمين</a></li>
+                                <li><a href="specializations.html">الملكية الفكرية</a></li>
+                                <li><a href="specializations.html">الشركات والإفلاس</a></li>
+                                <li><a href="specializations.html">الاستثمار الأجنبي</a></li>
+                                <li><a href="specializations.html">الامتياز التجاري</a></li>
+                                <li><a href="specializations.html">الدراسات القانونية</a></li>
+                                <li><a href="specializations.html">تصفية التركات</a></li>
                             </ul>
                         </li>
                         <li><a href="team.html">فريق العمل</a></li>
@@ -117,15 +134,191 @@
     <!-- Consultation Form Section -->
      <section class="consultation-form-section" style="padding: 60px 0; background: #f9f9f9;">
     <div class="container">
-        <div class="form-container" style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-            <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary-color);">نموذج حجز الاستشارة</h3>
+        <div class="form-container" style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); max-width: 760px; margin: 0 auto;">
 
-            <!-- COGNITO FORM -->
-           <iframe src="https://www.cognitoforms.com/f/8gndJfSiVU6fDhZwcUOOFg/4" allow="payment" style="border:0;width:100%;" height="922"></iframe>
-<script src="https://www.cognitoforms.com/f/iframe.js"></script>
+            <!-- أزرار التبويب -->
+            <div class="form-tabs" style="display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; justify-content:center;">
+                <button type="button" class="form-tab active" data-target="booking-form" style="flex:1; min-width:200px; padding:14px; border:none; border-radius:8px; cursor:pointer; font-size:16px; font-weight:600; background:linear-gradient(135deg,#705732,#ac864c); color:#fff;">حجز موعد استشارة</button>
+                <button type="button" class="form-tab" data-target="quote-form" style="flex:1; min-width:200px; padding:14px; border:1px solid #ddd; border-radius:8px; cursor:pointer; font-size:16px; font-weight:600; background:#f5f5f5; color:#333;">طلب عرض مالي</button>
+            </div>
+
+            <!-- النموذج الأول: حجز موعد -->
+            <div id="booking-form" class="tab-panel">
+                <h3 style="text-align:center; margin-bottom:25px; color:var(--primary-color);">حجز موعد استشارة</h3>
+                <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
+                    <input type="hidden" name="form-name" value="booking">
+                    <p style="display:none;"><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
+
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">الاسم</label>
+                        <input type="text" name="name" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box;">
+                    </div>
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">رقم الجوال</label>
+                        <input type="tel" name="phone" dir="ltr" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; text-align:right;">
+                    </div>
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">البريد الإلكتروني</label>
+                        <input type="email" name="email" dir="ltr" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; text-align:right;">
+                    </div>
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">الموعد المقترح</label>
+                        <select name="preferred_time" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; background:#fff;">
+                            <option value="">اختر اليوم والوقت المناسب</option>
+                            <optgroup label="الأحد">
+                                <option value="الأحد - 8:00 صباحاً">الأحد - 8:00 صباحاً</option>
+                                <option value="الأحد - 9:00 صباحاً">الأحد - 9:00 صباحاً</option>
+                                <option value="الأحد - 10:00 صباحاً">الأحد - 10:00 صباحاً</option>
+                                <option value="الأحد - 11:00 صباحاً">الأحد - 11:00 صباحاً</option>
+                                <option value="الأحد - 12:00 ظهراً">الأحد - 12:00 ظهراً</option>
+                                <option value="الأحد - 1:00 ظهراً">الأحد - 1:00 ظهراً</option>
+                                <option value="الأحد - 2:00 ظهراً">الأحد - 2:00 ظهراً</option>
+                                <option value="الأحد - 3:00 عصراً">الأحد - 3:00 عصراً</option>
+                                <option value="الأحد - 4:00 عصراً">الأحد - 4:00 عصراً</option>
+                            </optgroup>
+                            <optgroup label="الاثنين">
+                                <option value="الاثنين - 8:00 صباحاً">الاثنين - 8:00 صباحاً</option>
+                                <option value="الاثنين - 9:00 صباحاً">الاثنين - 9:00 صباحاً</option>
+                                <option value="الاثنين - 10:00 صباحاً">الاثنين - 10:00 صباحاً</option>
+                                <option value="الاثنين - 11:00 صباحاً">الاثنين - 11:00 صباحاً</option>
+                                <option value="الاثنين - 12:00 ظهراً">الاثنين - 12:00 ظهراً</option>
+                                <option value="الاثنين - 1:00 ظهراً">الاثنين - 1:00 ظهراً</option>
+                                <option value="الاثنين - 2:00 ظهراً">الاثنين - 2:00 ظهراً</option>
+                                <option value="الاثنين - 3:00 عصراً">الاثنين - 3:00 عصراً</option>
+                                <option value="الاثنين - 4:00 عصراً">الاثنين - 4:00 عصراً</option>
+                            </optgroup>
+                            <optgroup label="الثلاثاء">
+                                <option value="الثلاثاء - 8:00 صباحاً">الثلاثاء - 8:00 صباحاً</option>
+                                <option value="الثلاثاء - 9:00 صباحاً">الثلاثاء - 9:00 صباحاً</option>
+                                <option value="الثلاثاء - 10:00 صباحاً">الثلاثاء - 10:00 صباحاً</option>
+                                <option value="الثلاثاء - 11:00 صباحاً">الثلاثاء - 11:00 صباحاً</option>
+                                <option value="الثلاثاء - 12:00 ظهراً">الثلاثاء - 12:00 ظهراً</option>
+                                <option value="الثلاثاء - 1:00 ظهراً">الثلاثاء - 1:00 ظهراً</option>
+                                <option value="الثلاثاء - 2:00 ظهراً">الثلاثاء - 2:00 ظهراً</option>
+                                <option value="الثلاثاء - 3:00 عصراً">الثلاثاء - 3:00 عصراً</option>
+                                <option value="الثلاثاء - 4:00 عصراً">الثلاثاء - 4:00 عصراً</option>
+                            </optgroup>
+                            <optgroup label="الأربعاء">
+                                <option value="الأربعاء - 8:00 صباحاً">الأربعاء - 8:00 صباحاً</option>
+                                <option value="الأربعاء - 9:00 صباحاً">الأربعاء - 9:00 صباحاً</option>
+                                <option value="الأربعاء - 10:00 صباحاً">الأربعاء - 10:00 صباحاً</option>
+                                <option value="الأربعاء - 11:00 صباحاً">الأربعاء - 11:00 صباحاً</option>
+                                <option value="الأربعاء - 12:00 ظهراً">الأربعاء - 12:00 ظهراً</option>
+                                <option value="الأربعاء - 1:00 ظهراً">الأربعاء - 1:00 ظهراً</option>
+                                <option value="الأربعاء - 2:00 ظهراً">الأربعاء - 2:00 ظهراً</option>
+                                <option value="الأربعاء - 3:00 عصراً">الأربعاء - 3:00 عصراً</option>
+                                <option value="الأربعاء - 4:00 عصراً">الأربعاء - 4:00 عصراً</option>
+                            </optgroup>
+                            <optgroup label="الخميس">
+                                <option value="الخميس - 8:00 صباحاً">الخميس - 8:00 صباحاً</option>
+                                <option value="الخميس - 9:00 صباحاً">الخميس - 9:00 صباحاً</option>
+                                <option value="الخميس - 10:00 صباحاً">الخميس - 10:00 صباحاً</option>
+                                <option value="الخميس - 11:00 صباحاً">الخميس - 11:00 صباحاً</option>
+                                <option value="الخميس - 12:00 ظهراً">الخميس - 12:00 ظهراً</option>
+                                <option value="الخميس - 1:00 ظهراً">الخميس - 1:00 ظهراً</option>
+                                <option value="الخميس - 2:00 ظهراً">الخميس - 2:00 ظهراً</option>
+                                <option value="الخميس - 3:00 عصراً">الخميس - 3:00 عصراً</option>
+                                <option value="الخميس - 4:00 عصراً">الخميس - 4:00 عصراً</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">الموضوع</label>
+                        <textarea name="subject" rows="4" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; resize:vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" style="width:100%; padding:14px; border:none; border-radius:8px; background:linear-gradient(135deg,#705732,#ac864c); color:#fff; font-size:16px; font-weight:600; cursor:pointer;">إرسال طلب الحجز</button>
+                </form>
+                <p style="margin-top:18px; font-size:14px; color:#777; text-align:center; line-height:1.7;">
+                    ملاحظة: في حال وجود مرفقات، يتم تسليمها بعد اعتماد الموعد عن طريق البريد الإلكتروني أو الواتساب.
+                </p>
+            </div>
+
+            <!-- النموذج الثاني: استشارة / عرض مالي -->
+            <div id="quote-form" class="tab-panel" style="display:none;">
+                <h3 style="text-align:center; margin-bottom:25px; color:var(--primary-color);">طلب عرض مالي</h3>
+                <form name="consultation-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
+                    <input type="hidden" name="form-name" value="consultation-quote">
+                    <p style="display:none;"><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
+
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">الاسم</label>
+                        <input type="text" name="name" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box;">
+                    </div>
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">الجوال</label>
+                        <input type="tel" name="phone" dir="ltr" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; text-align:right;">
+                    </div>
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">البريد الإلكتروني</label>
+                        <input type="email" name="email" dir="ltr" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; text-align:right;">
+                    </div>
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">المدينة</label>
+                        <input type="text" name="city" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box;">
+                    </div>
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">هل أنت؟</label>
+                        <select name="client_type" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; background:#fff;">
+                            <option value="">اختر</option>
+                            <option value="فرد">فرد</option>
+                            <option value="مؤسسة">مؤسسة</option>
+                            <option value="شركة">شركة</option>
+                            <option value="جهة حكومية">جهة حكومية</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:10px; font-weight:600;">نوع الخدمة (يمكن اختيار أكثر من خدمة)</label>
+
+                        <p style="margin:6px 0 8px; font-weight:600; color:#705732; font-size:15px;">خدماتنا</p>
+                        <div style="display:grid; grid-template-columns:1fr; gap:10px; margin-bottom:14px;">
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الاستشارات القانونية"> الاستشارات القانونية</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الدعاوى والتقاضي"> الدعاوى والتقاضي</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="صياغة العقود"> صياغة العقود</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الإدارة القانونية للمنشآت"> الإدارة القانونية للمنشآت</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="تحصيل الديون"> تحصيل الديون</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="خدمات التوثيق"> خدمات التوثيق</label>
+                        </div>
+
+                        <p style="margin:6px 0 8px; font-weight:600; color:#705732; font-size:15px;">مجالات التخصص</p>
+                        <div style="display:grid; grid-template-columns:1fr; gap:10px;">
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الصناعة والطاقة"> الصناعة والطاقة</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الترفيه والسينما"> الترفيه والسينما</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="العقارات والمقاولات"> العقارات والمقاولات</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="المالية والمصرفية"> المالية والمصرفية</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="العمل والعمال"> العمل والعمال</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الرعاية الصحية والتأمين"> الرعاية الصحية والتأمين</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الملكية الفكرية"> الملكية الفكرية</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الشركات والإفلاس"> الشركات والإفلاس</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الاستثمار الأجنبي"> الاستثمار الأجنبي</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الامتياز التجاري"> الامتياز التجاري</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="الدراسات القانونية"> الدراسات القانونية</label>
+                            <label style="display:block; padding:6px 0; cursor:pointer; text-align:right;"><input type="checkbox" style="margin-left:8px; vertical-align:middle;" name="services[]" value="تصفية التركات"> تصفية التركات</label>
+                        </div>
+
+                        <div style="margin-top:14px;">
+                            <label style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><input type="checkbox" id="other-service-check" name="services[]" value="أخرى"> أخرى</label>
+                            <input type="text" id="other-service-text" name="other_service" placeholder="اكتب الخدمة المطلوبة" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; display:none;">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:18px;">
+                        <label style="display:block; margin-bottom:6px; font-weight:600;">نبذة عن الطلب</label>
+                        <textarea name="request_details" rows="4" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; box-sizing:border-box; resize:vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" style="width:100%; padding:14px; border:none; border-radius:8px; background:linear-gradient(135deg,#705732,#ac864c); color:#fff; font-size:16px; font-weight:600; cursor:pointer;">إرسال الطلب</button>
+                </form>
+                <p style="margin-top:18px; font-size:14px; color:#777; text-align:center; line-height:1.7;">
+                    ملاحظة: في حال وجود مرفقات، يتم تسليمها بعد التواصل معكم عن طريق البريد الإلكتروني أو الواتساب.
+                </p>
+            </div>
+
         </div>
     </div>
 </section>
+
     
 
     <!-- FAQ Section -->
@@ -277,5 +470,64 @@
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
     <script src="../js/consultation.js"></script>
+    <!-- Consultation forms: tab switching + Netlify AJAX -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // تبديل التبويبات
+            var tabs = document.querySelectorAll('.form-tab');
+            var panels = document.querySelectorAll('.tab-panel');
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) {
+                        t.classList.remove('active');
+                        t.style.background = '#f5f5f5';
+                        t.style.color = '#333';
+                        t.style.border = '1px solid #ddd';
+                    });
+                    tab.classList.add('active');
+                    tab.style.background = 'linear-gradient(135deg,#705732,#ac864c)';
+                    tab.style.color = '#fff';
+                    tab.style.border = 'none';
+                    panels.forEach(function (p) { p.style.display = 'none'; });
+                    document.getElementById(tab.getAttribute('data-target')).style.display = 'block';
+                });
+            });
+
+            // إرسال النماذج عبر AJAX إلى Netlify
+            document.querySelectorAll('form[data-netlify="true"]').forEach(function (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var btn = form.querySelector('button[type="submit"]');
+                    var original = btn ? btn.textContent : '';
+                    if (btn) { btn.disabled = true; btn.textContent = 'جارٍ الإرسال...'; }
+                    var data = new FormData(form);
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(data).toString()
+                    })
+                    .then(function (res) {
+                        if (res.ok) {
+                            window.location.href = form.getAttribute('action') || 'thanks.html';
+                        } else { throw new Error('not ok'); }
+                    })
+                    .catch(function () {
+                        if (btn) { btn.disabled = false; btn.textContent = original; }
+                        alert('عذراً، حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى أو التواصل عبر الهاتف.');
+                    });
+                });
+            });
+            // إظهار خانة "أخرى" فقط عند تفعيلها
+            var otherCheck = document.getElementById('other-service-check');
+            var otherText = document.getElementById('other-service-text');
+            if (otherCheck && otherText) {
+                otherCheck.addEventListener('change', function () {
+                    otherText.style.display = otherCheck.checked ? 'block' : 'none';
+                    if (!otherCheck.checked) { otherText.value = ''; }
+                });
+            }
+        });
+    </script>
+
 </body>
 </html>
