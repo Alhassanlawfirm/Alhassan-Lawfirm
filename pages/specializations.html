@@ -498,6 +498,22 @@
         transform: translateY(-3px);
     }
 
+    @media (max-width: 768px) {
+        .approach-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        .approach-text {
+            order: 1;
+        }
+        .approach-image {
+            order: 2;
+            height: 220px;
+        }
+        .approach-image i {
+            font-size: 4rem;
+        }
+    }
    
     
 </style>
