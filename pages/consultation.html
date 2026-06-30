@@ -494,9 +494,13 @@
             });
 
             // إرسال النماذج عبر AJAX إلى Netlify
-            document.querySelectorAll('form[data-netlify="true"]').forEach(function (form) {
+            // ملاحظة: ننسخ كل نموذج لإزالة أي معالجات أضافها main.js (تجنّب رسالة نجاح وهمية)
+            document.querySelectorAll('form[data-netlify="true"]').forEach(function (oldForm) {
+                var form = oldForm.cloneNode(true);
+                oldForm.parentNode.replaceChild(form, oldForm);
                 form.addEventListener('submit', function (e) {
                     e.preventDefault();
+                    e.stopImmediatePropagation();
                     var btn = form.querySelector('button[type="submit"]');
                     var original = btn ? btn.textContent : '';
                     if (btn) { btn.disabled = true; btn.textContent = 'جارٍ الإرسال...'; }
