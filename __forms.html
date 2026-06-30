@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Netlify Forms Detection</title>
+</head>
+<body>
+    <!-- هذا الملف لاكتشاف النماذج من Netlify وقت البناء فقط، ولا يراه الزوّار -->
+
+    <!-- نموذج حجز موعد استشارة -->
+    <form name="booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="booking">
+        <input type="text" name="name">
+        <input type="tel" name="phone">
+        <input type="email" name="email">
+        <input type="text" name="preferred_time">
+        <textarea name="subject"></textarea>
+        <input name="bot-field">
+    </form>
+
+    <!-- نموذج طلب عرض مالي -->
+    <form name="consultation-quote" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="consultation-quote">
+        <input type="text" name="name">
+        <input type="tel" name="phone">
+        <input type="email" name="email">
+        <input type="text" name="city">
+        <input type="text" name="client_type">
+        <input type="text" name="services[]">
+        <input type="text" name="other_service">
+        <textarea name="request_details"></textarea>
+        <input name="bot-field">
+    </form>
+
+    <!-- نموذج اتصل بنا -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="contact">
+        <input type="text" name="name">
+        <input type="email" name="email">
+        <input type="tel" name="phone">
+        <input type="text" name="subject">
+        <textarea name="message"></textarea>
+        <input name="bot-field">
+    </form>
+
+</body>
+</html>
