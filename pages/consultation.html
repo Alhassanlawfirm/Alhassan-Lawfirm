@@ -467,12 +467,33 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript -->
-    <script src="../js/main.js"></script>
-    <!-- Consultation forms: tab switching + Netlify AJAX -->
+    <!-- JavaScript: كل الأكواد داخل الصفحة (مستقلة تماماً، بدون ملفات خارجية) -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // تبديل التبويبات
+            // ===== قائمة الموبايل =====
+            var mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            var mainNav = document.querySelector('.main-nav');
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                });
+            }
+
+            // ===== القوائم المنسدلة (للموبايل) =====
+            function isMobile() { return window.innerWidth <= 992; }
+            document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+                var link = dropdown.querySelector('a');
+                if (!link) return;
+                link.addEventListener('click', function (e) {
+                    if (isMobile()) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // ===== تبديل التبويبات =====
             var tabs = document.querySelectorAll('.form-tab');
             var panels = document.querySelectorAll('.tab-panel');
             tabs.forEach(function (tab) {
@@ -492,14 +513,10 @@
                 });
             });
 
-            // إرسال النماذج عبر AJAX إلى Netlify
-            // ملاحظة: ننسخ كل نموذج لإزالة أي معالجات أضافها main.js (تجنّب رسالة نجاح وهمية)
-            document.querySelectorAll('form[data-netlify="true"]').forEach(function (oldForm) {
-                var form = oldForm.cloneNode(true);
-                oldForm.parentNode.replaceChild(form, oldForm);
+            // ===== إرسال النماذج إلى Netlify =====
+            document.querySelectorAll('form[data-netlify="true"]').forEach(function (form) {
                 form.addEventListener('submit', function (e) {
                     e.preventDefault();
-                    e.stopImmediatePropagation();
                     var btn = form.querySelector('button[type="submit"]');
                     var original = btn ? btn.textContent : '';
                     if (btn) { btn.disabled = true; btn.textContent = 'جارٍ الإرسال...'; }
@@ -520,10 +537,12 @@
                     });
                 });
             });
-            // إظهار خانة "أخرى" فقط عند تفعيلها
+
+            // ===== خانة "أخرى" =====
             var otherCheck = document.getElementById('other-service-check');
             var otherText = document.getElementById('other-service-text');
             if (otherCheck && otherText) {
+                otherText.style.display = otherCheck.checked ? 'block' : 'none';
                 otherCheck.addEventListener('change', function () {
                     otherText.style.display = otherCheck.checked ? 'block' : 'none';
                     if (!otherCheck.checked) { otherText.value = ''; }
