@@ -1,0 +1,17 @@
+# توجيه صفحة نجاح النماذج إلى صفحة الشكر العربية
+[[redirects]]
+  from = "/pages/thanks"
+  to = "/pages/thanks.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/thanks"
+  to = "/pages/thanks.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/consultation"
+  to = "/pages/consultation.html"
+  status = 200
