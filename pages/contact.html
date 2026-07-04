@@ -948,8 +948,9 @@
             
             <div class="contact-form-container">
                 <div class="contact-form">
-                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/pages/thanks.html">
                         <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="_next" value="/pages/thanks.html">
                         <p style="display:none;"><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
                         <div class="form-group">
                             <label for="name">الاسم الكامل</label>
@@ -1746,7 +1747,7 @@
                 })
                 .then(function (res) {
                     if (res.ok) {
-                        window.location.href = form.getAttribute('action') || 'thanks.html';
+                        window.location.href = form.getAttribute('action') || '../thanks.html';
                     } else {
                         throw new Error('Network response was not ok');
                     }

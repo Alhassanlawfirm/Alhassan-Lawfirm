@@ -1,4 +1,4 @@
-# توجيه صفحة نجاح النماذج إلى صفحة الشكر العربية
+# ضمان عرض صفحات الشكر العربية بمساراتها الصحيحة
 [[redirects]]
   from = "/pages/thanks"
   to = "/pages/thanks.html"
@@ -6,12 +6,7 @@
   force = true
 
 [[redirects]]
-  from = "/thanks"
-  to = "/pages/thanks.html"
+  from = "/en/pages/thanks"
+  to = "/en/pages/thanks.html"
   status = 200
   force = true
-
-[[redirects]]
-  from = "/pages/consultation"
-  to = "/pages/consultation.html"
-  status = 200

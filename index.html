@@ -416,8 +416,9 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="pages/thanks.html">
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/pages/thanks.html">
                         <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="_next" value="/pages/thanks.html">
                         <p style="display:none;"><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
                         <div class="form-group">
                             <input type="text" name="name" placeholder="الاسم الكامل" required>
