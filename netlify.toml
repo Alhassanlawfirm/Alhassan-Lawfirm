@@ -1,12 +1,5 @@
-# ضمان عرض صفحات الشكر العربية بمساراتها الصحيحة
 [[redirects]]
-  from = "/pages/thanks"
-  to = "/pages/thanks.html"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/en/pages/thanks"
-  to = "/en/pages/thanks.html"
+  from = "/pages/shukran"
+  to = "/pages/shukran.html"
   status = 200
   force = true
