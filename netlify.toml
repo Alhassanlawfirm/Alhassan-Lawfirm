@@ -2,4 +2,3 @@
   from = "/pages/shukran"
   to = "/pages/shukran.html"
   status = 200
-  force = true
