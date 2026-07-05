@@ -145,7 +145,7 @@
             <!-- النموذج الأول: حجز موعد -->
             <div id="booking-form" class="tab-panel">
                 <h3 style="text-align:center; margin-bottom:25px; color:var(--primary-color);">حجز موعد استشارة</h3>
-                <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/pages/shukran">
                     <input type="hidden" name="form-name" value="booking">
                     <p style="display:none;"><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
 
@@ -237,7 +237,7 @@
             <!-- النموذج الثاني: استشارة / عرض مالي -->
             <div id="quote-form" class="tab-panel" style="display:none;">
                 <h3 style="text-align:center; margin-bottom:25px; color:var(--primary-color);">طلب عرض مالي</h3>
-                <form name="consultation-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <form name="consultation-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/pages/shukran">
                     <input type="hidden" name="form-name" value="consultation-quote">
                     <p style="display:none;"><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
 
@@ -513,28 +513,13 @@
                 });
             });
 
-            // ===== إرسال النماذج إلى Netlify =====
+            // ===== النماذج تُرسَل بالطريقة العادية وتعتمد على action للتوجيه =====
+            // (Netlify يوجّه تلقائياً لصفحة الشكر المحدّدة في action بعد الاستلام)
             document.querySelectorAll('form[data-netlify="true"]').forEach(function (form) {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
+                form.addEventListener('submit', function () {
                     var btn = form.querySelector('button[type="submit"]');
-                    var original = btn ? btn.textContent : '';
                     if (btn) { btn.disabled = true; btn.textContent = 'جارٍ الإرسال...'; }
-                    var data = new FormData(form);
-                    fetch('/', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: new URLSearchParams(data).toString()
-                    })
-                    .then(function (res) {
-                        if (res.ok) {
-                            window.location.href = '/pages/shukran.html';
-                        } else { throw new Error('not ok'); }
-                    })
-                    .catch(function () {
-                        if (btn) { btn.disabled = false; btn.textContent = original; }
-                        alert('عذراً، حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى أو التواصل عبر الهاتف.');
-                    });
+                    // لا نمنع الإرسال الافتراضي — Netlify يستقبل ويوجّه لـ action
                 });
             });
 
