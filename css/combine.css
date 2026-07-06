@@ -1236,25 +1236,26 @@ html.smooth-scroll {
         width: 100%;
     }
 
-    /* FIXED DROPDOWN MENU */
-    .dropdown-menu {
+    /* FIXED DROPDOWN MENU - أولوية عالية لتتجاوز .main-nav ul {display:flex} */
+    .main-nav ul.dropdown-menu,
+    .main-nav .dropdown .dropdown-menu {
         position: static;
         box-shadow: none;
         opacity: 1;
         visibility: visible;
         transform: none;
-        display: none;
+        display: none !important;
         width: 100%;
         padding: 0;
-        background-color: var(--neutral-color); /* Different background for distinction */
+        background-color: var(--neutral-color);
         border-radius: 0;
-        max-height: none; /* Remove height restrictions */
-        overflow: visible; /* Allow content to show */
-         display: none;
+        max-height: none;
+        overflow: visible;
     }
 
-    .dropdown.active .dropdown-menu {
-        display: block;
+    .main-nav .dropdown.active ul.dropdown-menu,
+    .main-nav .dropdown.active .dropdown-menu {
+        display: block !important;
         animation: slideDown 0.3s ease;
     }
 
