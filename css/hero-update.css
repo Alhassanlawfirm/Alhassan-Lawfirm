@@ -1,5 +1,6 @@
 .hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/backgrounds/law-background.jpg');
+    background-image: url('../images/backgrounds/hero-palms-lightning.jpg');
+    background-color: #1a1510;
     background-size: cover;
     background-position: center;
     height: 600px;
@@ -8,9 +9,55 @@
     text-align: center;
     color: var(--white);
     position: relative;
+    overflow: hidden;
     margin-top: 90px;
     margin-left: -10px;
     margin-right: -10px;
+}
+
+/* طبقات الخلفية المتبادلة */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroFade 16s infinite;
+    z-index: 0;
+    transform: scale(1.02);
+}
+
+.hero-bg.bg-1 {
+    background-image: url('../images/backgrounds/hero-palms-lightning.jpg');
+    animation-delay: 0s;
+}
+
+.hero-bg.bg-2 {
+    background-image: url('../images/backgrounds/hero-palm-night.jpg');
+    animation-delay: 8s;
+}
+
+@keyframes heroFade {
+    0%   { opacity: 0; }
+    8%   { opacity: 1; }
+    50%  { opacity: 1; }
+    58%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* التعتيم فوق الخلفية لوضوح النص */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+    z-index: 1;
 }
 
 .hero-content {
