@@ -1,13 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.alhassanlawfirm.com/</loc><lastmod>2026-06-21</lastmod><priority>1.0</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/pages/about.html</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/pages/services.html</loc><lastmod>2026-06-21</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/pages/specializations.html</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/pages/team.html</loc><lastmod>2026-06-21</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/pages/blog.html</loc><lastmod>2026-06-21</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/pages/faq.html</loc><lastmod>2026-06-21</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/pages/contact.html</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/pages/consultation.html</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.alhassanlawfirm.com/en/index.html</loc><lastmod>2026-06-21</lastmod><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.alhassanlawfirm.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/pages/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/about.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/en/pages/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/about.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/pages/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/services.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/en/pages/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/services.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/pages/specializations.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/specializations.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/specializations.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/specializations.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/en/pages/specializations.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/specializations.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/specializations.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/specializations.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/pages/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/team.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/team.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/team.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/en/pages/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/team.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/team.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/team.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/pages/consultation.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/pages/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/contact.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/en/pages/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/contact.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/pages/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/faq.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/en/pages/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/faq.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/pages/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/blog.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.alhassanlawfirm.com/en/pages/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/blog.html"/>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>

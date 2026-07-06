@@ -237,6 +237,7 @@ section {
     margin-bottom: 50px;
 }
 
+.section-header h1,
 .section-header h2 {
     font-size: 36px;
     position: relative;
@@ -244,6 +245,7 @@ section {
     margin-bottom: 20px;
 }
 
+.section-header h1:after,
 .section-header h2:after {
     content: '';
     position: absolute;

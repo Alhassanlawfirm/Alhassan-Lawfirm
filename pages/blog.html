@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المدونة القانونية - الحسن للمحاماة</title>
-    <meta name="description" content="المدونة القانونية لمكتب الحسن للمحاماة: مقالات ومستجدات قانونية تهمك في القانون السعودي والأنظمة المعمول بها.">
+    <title>المدونة القانونية | مقالات في الأنظمة السعودية - الحسن للمحاماة</title>
+    <meta name="description" content="مقالات ومستجدات قانونية من محامي مكتب الحسن للمحاماة حول الأنظمة السعودية: العمل، الشركات، العقارات، والتقاضي.">
     <meta name="keywords" content="مكتب محاماة, محامي, استشارات قانونية, الأحساء, السعودية, الحسن للمحاماة, صياغة عقود, تأسيس شركات">
     <meta name="author" content="مكتب الحسن للمحاماة">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.alhassanlawfirm.com/pages/blog.html">
+    <link rel="alternate" hreflang="ar" href="https://www.alhassanlawfirm.com/pages/blog.html">
+    <link rel="alternate" hreflang="en" href="https://www.alhassanlawfirm.com/en/pages/blog.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.alhassanlawfirm.com/pages/blog.html">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
     <meta property="og:site_name" content="مكتب الحسن للمحاماة">
-    <meta property="og:title" content="المدونة القانونية - مكتب الحسن للمحاماة">
-    <meta property="og:description" content="المدونة القانونية لمكتب الحسن للمحاماة: مقالات ومستجدات قانونية تهمك في القانون السعودي والأنظمة المعمول بها.">
+    <meta property="og:title" content="المدونة القانونية | مقالات في الأنظمة السعودية - الحسن للمحاماة">
+    <meta property="og:description" content="مقالات ومستجدات قانونية من محامي مكتب الحسن للمحاماة حول الأنظمة السعودية: العمل، الشركات، العقارات، والتقاضي.">
     <meta property="og:url" content="https://www.alhassanlawfirm.com/pages/blog.html">
-    <meta property="og:image" content="https://www.alhassanlawfirm.com/images/logo.png">
+    <meta property="og:image" content="https://www.alhassanlawfirm.com/images/og-image.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="المدونة القانونية - مكتب الحسن للمحاماة">
-    <meta name="twitter:description" content="المدونة القانونية لمكتب الحسن للمحاماة: مقالات ومستجدات قانونية تهمك في القانون السعودي والأنظمة المعمول بها.">
-    <meta name="twitter:image" content="https://www.alhassanlawfirm.com/images/logo.png">
+    <meta name="twitter:title" content="المدونة القانونية | مقالات في الأنظمة السعودية - الحسن للمحاماة">
+    <meta name="twitter:description" content="مقالات ومستجدات قانونية من محامي مكتب الحسن للمحاماة حول الأنظمة السعودية: العمل، الشركات، العقارات، والتقاضي.">
+    <meta name="twitter:image" content="https://www.alhassanlawfirm.com/images/og-image.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../images/logo.png">
@@ -343,7 +346,7 @@
         <div class="container">
             <section class="container">
         <section class="section-header">
-            <h2>المدونة القانونية</h2>
+            <h1>المدونة القانونية</h1>
         </section>
         <div id="blog-grid" class="blog-grid">
             <!-- Posts will be injected here -->
@@ -503,7 +506,7 @@
 
                return `
                  <article class="blog-post">
-                 <div class="post-image"><a href="${internalLink}"><img src="${thumb}" alt="${title}"></a></div>
+                 <div class="post-image"><a href="${internalLink}"><img src="${thumb}" alt="${title}" loading="lazy"></a></div>
                  <div class="post-content">
                  <h3><a href="${internalLink}">${title}</a></h3>
                  <div class="post-meta"><span>${published}</span></div>

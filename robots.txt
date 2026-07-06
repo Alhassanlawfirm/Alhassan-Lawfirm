@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# صفحات خدمية لا تفيد نتائج البحث
+Disallow: /pages/shukran.html
+Disallow: /pages/thanks.html
+Disallow: /en/pages/thanks.html
+Disallow: /thanks.html
+Disallow: /form-success.html
+Disallow: /form-test.html
+Disallow: /__forms.html
+Disallow: /admin/
+
 Sitemap: https://www.alhassanlawfirm.com/sitemap.xml
