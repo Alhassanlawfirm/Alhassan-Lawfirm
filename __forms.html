@@ -8,7 +8,7 @@
     <!-- هذا الملف لاكتشاف النماذج من Netlify وقت البناء فقط، ولا يراه الزوّار -->
 
     <!-- نموذج حجز موعد استشارة -->
-    <form name="booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="booking" data-netlify="true" netlify-honeypot="bot-field" action="/pages/shukran.html" hidden>
         <input type="hidden" name="form-name" value="booking">
         <input type="text" name="name">
         <input type="tel" name="phone">
@@ -19,7 +19,7 @@
     </form>
 
     <!-- نموذج طلب عرض مالي -->
-    <form name="consultation-quote" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="consultation-quote" data-netlify="true" netlify-honeypot="bot-field" action="/pages/shukran.html" hidden>
         <input type="hidden" name="form-name" value="consultation-quote">
         <input type="text" name="name">
         <input type="tel" name="phone">
@@ -33,8 +33,19 @@
     </form>
 
     <!-- نموذج اتصل بنا -->
-    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" action="/pages/shukran.html" hidden>
         <input type="hidden" name="form-name" value="contact">
+        <input type="text" name="name">
+        <input type="email" name="email">
+        <input type="tel" name="phone">
+        <input type="text" name="subject">
+        <textarea name="message"></textarea>
+        <input name="bot-field">
+    </form>
+
+    <!-- نموذج اتصل بنا (النسخة الإنجليزية) -->
+    <form name="contact-en" data-netlify="true" netlify-honeypot="bot-field" action="/en/pages/thanks.html" hidden>
+        <input type="hidden" name="form-name" value="contact-en">
         <input type="text" name="name">
         <input type="email" name="email">
         <input type="tel" name="phone">
