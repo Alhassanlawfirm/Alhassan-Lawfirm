@@ -18,117 +18,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // BULLETPROOF DROPDOWN SOLUTION
-    // Wait a bit for DOM to be fully ready
+    // ===== قوائم الجوال: زر + لفتح التفاصيل، والرابط نفسه يفتح الصفحة =====
     setTimeout(function() {
         const dropdowns = document.querySelectorAll('.dropdown');
-        
-        // Process each dropdown
-        dropdowns.forEach((dropdown, index) => {
-            const originalLink = dropdown.querySelector('> a');
+
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector(':scope > a');
             const submenu = dropdown.querySelector('.dropdown-menu');
-            
-            if (originalLink && submenu) {
-                console.log(`Processing dropdown ${index}:`, dropdown);
-                
-                // Store original href for desktop use
-                const originalHref = originalLink.getAttribute('href');
-                
-                // Create a completely new link element
-                const newLink = document.createElement('a');
-                newLink.innerHTML = originalLink.innerHTML;
-                newLink.className = originalLink.className;
-                
-                // Set href conditionally
-                if (isMobile()) {
-                    newLink.setAttribute('href', '#');
-                    newLink.setAttribute('data-original-href', originalHref);
-                } else {
-                    newLink.setAttribute('href', originalHref || '#');
-                }
-                
-                // Replace the original link
-                originalLink.parentNode.replaceChild(newLink, originalLink);
-                
-                // Add mobile-only click handler
-                newLink.addEventListener('click', function(e) {
-                    console.log('Link clicked, isMobile:', isMobile());
-                    
-                    if (isMobile()) {
-                        // FORCE stop everything on mobile
-                        e.preventDefault();
-                        e.stopPropagation();
-                        e.stopImmediatePropagation();
-                        
-                        console.log('Mobile click prevented');
-                        
-                        // Toggle dropdown
-                        const isCurrentlyActive = dropdown.classList.contains('active');
-                        
-                        // Close all other dropdowns
-                        dropdowns.forEach(otherDropdown => {
-                            if (otherDropdown !== dropdown) {
-                                otherDropdown.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current dropdown
-                        if (isCurrentlyActive) {
-                            dropdown.classList.remove('active');
-                            console.log('Dropdown closed');
-                        } else {
-                            dropdown.classList.add('active');
-                            console.log('Dropdown opened');
-                        }
-                        
-                        return false;
-                    } else {
-                        // Desktop: restore original href if it exists and navigate
-                        const originalHref = this.getAttribute('data-original-href');
-                        if (originalHref && originalHref !== '#' && originalHref !== '') {
-                            this.setAttribute('href', originalHref);
-                        }
+            if (!link || !submenu) return;
+
+            // إنشاء زر التوسيع (+) — يظهر في الجوال فقط عبر CSS
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'dropdown-toggle-btn';
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', 'عرض القائمة الفرعية');
+            btn.textContent = '+';
+            dropdown.insertBefore(btn, submenu);
+
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isActive = dropdown.classList.contains('active');
+
+                // إغلاق القوائم الأخرى
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) {
+                        d.classList.remove('active');
+                        const b = d.querySelector('.dropdown-toggle-btn');
+                        if (b) { b.textContent = '+'; b.setAttribute('aria-expanded', 'false'); }
                     }
                 });
-                
-                // Disable ALL hover/focus events on mobile
-                ['mouseenter', 'mouseover', 'focus', 'touchstart'].forEach(eventType => {
-                    dropdown.addEventListener(eventType, function(e) {
-                        if (isMobile()) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            return false;
-                        }
-                    });
-                });
-            }
-        });
-        
-        // Handle window resize - update href attributes
-        window.addEventListener('resize', function() {
-            dropdowns.forEach(dropdown => {
-                const link = dropdown.querySelector('> a');
-                if (link) {
-                    const originalHref = link.getAttribute('data-original-href');
-                    
-                    if (isMobile()) {
-                        link.setAttribute('href', '#');
-                        dropdown.classList.remove('active');
-                    } else {
-                        link.setAttribute('href', originalHref || '#');
-                        dropdown.classList.remove('active');
-                    }
-                }
+
+                dropdown.classList.toggle('active', !isActive);
+                btn.textContent = isActive ? '+' : '\u2212';
+                btn.setAttribute('aria-expanded', String(!isActive));
             });
-            
-            // Close mobile menu if switching to desktop
+        });
+
+        // عند تكبير الشاشة للديسكتوب: إغلاق كل القوائم وإعادة الأزرار
+        window.addEventListener('resize', function() {
             if (!isMobile()) {
-                mainNav.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
+                dropdowns.forEach(d => {
+                    d.classList.remove('active');
+                    const b = d.querySelector('.dropdown-toggle-btn');
+                    if (b) { b.textContent = '+'; b.setAttribute('aria-expanded', 'false'); }
+                });
+                if (mainNav) mainNav.classList.remove('active');
+                if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
             }
         });
-        
-    }, 100); // Small delay to ensure DOM is ready
+
+    }, 100);
     
     // Enhanced Mobile Menu Scrolling
     if (mainNav) {
@@ -142,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!clickedLink) return;
             
             const parentDropdown = clickedLink.closest('.dropdown');
-            const isDropdownParent = parentDropdown && parentDropdown.querySelector('> a') === clickedLink;
+            const isDropdownParent = parentDropdown && parentDropdown.querySelector(':scope > a') === clickedLink;
             
             // If it's not a dropdown parent link (i.e., it's a regular link or dropdown child)
             if (!isDropdownParent && isMobile()) {

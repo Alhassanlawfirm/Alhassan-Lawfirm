@@ -356,6 +356,11 @@ header {
 }
 
 /* Dropdown Menu */
+/* زر توسيع القوائم في الجوال */
+.dropdown-toggle-btn {
+    display: none;
+}
+
 .dropdown {
     position: relative;
     z-index: 101;
@@ -988,14 +993,15 @@ footer {
 }
 
 .footer-logo img {
-    height: 60px;
     margin-bottom: 15px;
-     width: 90px;
-       height:auto;
-       background:white;
-       padding:10px;
-       border-radius:15px;
-       box-shadow:0 0 8px rgba(0,0,0,0.15);
+    width: 90px;
+    height: auto;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    /* يحول الشعار الداكن إلى أبيض ليظهر بوضوح على الفوتر الداكن بدون خلفية */
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
 }
 
 .footer-logo p {
@@ -1250,6 +1256,44 @@ html.smooth-scroll {
     .dropdown.active .dropdown-menu {
         display: block;
         animation: slideDown 0.3s ease;
+    }
+
+    /* زر + / − لفتح تفاصيل القائمة */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-toggle-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 6px;
+        left: 15px;          /* في اتجاه RTL يظهر يسار العنوان */
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(172, 134, 76, 0.5);
+        border-radius: 8px;
+        background: rgba(172, 134, 76, 0.12);
+        color: var(--secondary-color, #ac864c);
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0;
+        transition: all 0.25s ease;
+    }
+
+    .dropdown.active .dropdown-toggle-btn {
+        background: var(--secondary-color, #ac864c);
+        color: #fff;
+    }
+
+    /* اتجاه LTR (النسخة الإنجليزية): الزر على اليمين */
+    html[dir="ltr"] .dropdown-toggle-btn,
+    [lang="en"] .dropdown-toggle-btn {
+        left: auto;
+        right: 15px;
     }
 
     .dropdown-menu li {

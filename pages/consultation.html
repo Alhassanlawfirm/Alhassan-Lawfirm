@@ -480,16 +480,35 @@
                 });
             }
 
-            // ===== القوائم المنسدلة (للموبايل) =====
+            // ===== القوائم المنسدلة (للموبايل): زر + لفتح التفاصيل =====
             function isMobile() { return window.innerWidth <= 992; }
-            document.querySelectorAll('.dropdown').forEach(function (dropdown) {
-                var link = dropdown.querySelector('a');
-                if (!link) return;
-                link.addEventListener('click', function (e) {
-                    if (isMobile()) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('active');
-                    }
+            var allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(function (dropdown) {
+                var submenu = dropdown.querySelector('.dropdown-menu');
+                if (!submenu) return;
+
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'dropdown-toggle-btn';
+                btn.setAttribute('aria-expanded', 'false');
+                btn.setAttribute('aria-label', 'عرض القائمة الفرعية');
+                btn.textContent = '+';
+                dropdown.insertBefore(btn, submenu);
+
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var isActive = dropdown.classList.contains('active');
+                    allDropdowns.forEach(function (d) {
+                        if (d !== dropdown) {
+                            d.classList.remove('active');
+                            var b = d.querySelector('.dropdown-toggle-btn');
+                            if (b) { b.textContent = '+'; b.setAttribute('aria-expanded', 'false'); }
+                        }
+                    });
+                    dropdown.classList.toggle('active', !isActive);
+                    btn.textContent = isActive ? '+' : '\u2212';
+                    btn.setAttribute('aria-expanded', String(!isActive));
                 });
             });
 
