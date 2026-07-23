@@ -212,15 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Clients Slider
-    const clientsSlider = document.querySelector('.clients-slider');
-    
-    if (clientsSlider && clientsSlider.children.length > 0) {
-        setInterval(() => {
-            clientsSlider.appendChild(clientsSlider.children[0]);
-        }, 3000);
-    }
-    
     // Add active class to current page link
     const currentLocation = window.location.pathname;
     const navLinks = document.querySelectorAll('.main-nav a');

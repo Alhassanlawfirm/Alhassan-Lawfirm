@@ -4,23 +4,30 @@
   position: relative;
   direction: rtl;
   font-family: 'Cairo', 'Tajawal', sans-serif;
-
-  margin-right: -50px;
 }
 
-.clients-slider-container {
+.clients-marquee {
   position: relative;
-  max-width: 100%;
   margin-top: 40px;
-  overflow: hidden;         /* hides overflow */
-  padding: 0 50px;
+  overflow: hidden;
+  direction: ltr; /* anchors the track flush-left so the -50% loop trick works; RTL would anchor it flush-right and slide it entirely off-screen */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
-.clients-slider {
+.clients-track {
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  transition: transform 0.8s cubic-bezier(0.25,0.1,0.25,1);
+  width: max-content;
+  animation: clients-scroll 30s linear infinite;
+}
+
+.clients-marquee:hover .clients-track {
+  animation-play-state: paused;
+}
+
+@keyframes clients-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .client-item {
@@ -51,46 +58,18 @@
   transform: scale(1.05);
 }
 
-.slider-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease;
-}
-.slider-nav:hover {
-  background-color: var(--primary-color, #007bff);
-  color: #fff;
-  transform: translateY(-50%) scale(1.1);
-}
-.slider-prev { left: 10px; }
-.slider-next { right: 10px; }
-
-.slider-nav.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none; /* stop clicks when disabled */
+@media (prefers-reduced-motion: reduce) {
+  .clients-track {
+    animation-play-state: paused;
+  }
 }
 
 @media (max-width: 992px) {
   .client-item { min-width: 180px; height: 100px; }
 }
 @media (max-width: 768px) {
-  .clients-slider-container { padding: 0 40px; }
   .client-item { min-width: 150px; height: 90px; margin: 0 10px; }
-  .slider-nav { width: 35px; height: 35px; }
 }
 @media (max-width: 576px) {
-  .clients-slider-container { padding: 0 35px; }
   .client-item { min-width: 130px; height: 80px; margin: 0 8px; }
-  .slider-nav { width: 30px; height: 30px; }
 }

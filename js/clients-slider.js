@@ -1,52 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const slider      = document.querySelector('.clients-slider');
-  const wrapper     = document.querySelector('.clients-slider-wrapper');
-  const prevBtn     = document.querySelector('.slider-prev');
-  const nextBtn     = document.querySelector('.slider-next');
-  const items       = document.querySelectorAll('.client-item');
+// Duplicates the logo set once so the CSS marquee animation (translateX 0 -> -50%)
+// loops seamlessly. Must run on a track holding exactly one copy of the logos —
+// cms-content.js resets #clients-logos to a single set before calling this again.
+function initClientsMarquee() {
+  const track = document.getElementById('clients-logos');
+  if (!track || track.children.length === 0) return;
 
-  let itemWidth     = calcItemWidth();
-  let visibleCount  = calcVisibleCount();
-  let currentIndex  = 0;
-  let maxIndex      = items.length - visibleCount;
-
-  function calcItemWidth() {
-    const style = window.getComputedStyle(items[0]);
-    return items[0].offsetWidth +
-           parseInt(style.marginLeft) +
-           parseInt(style.marginRight);
-  }
-
-  function calcVisibleCount() {
-    return Math.floor(wrapper.offsetWidth / itemWidth);
-  }
-
-  function moveSlider() {
-    slider.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
-    updateButtons();
-  }
-
-  function updateButtons() {
-    prevBtn.classList.toggle('disabled', currentIndex === 0);
-    nextBtn.classList.toggle('disabled', currentIndex >= maxIndex);
-  }
-
-  function changeSlide(direction) {
-    const newIndex = currentIndex + direction;
-    if (newIndex < 0 || newIndex > maxIndex) return;
-    currentIndex = newIndex;
-    moveSlider();
-  }
-
-  prevBtn.addEventListener('click', () => changeSlide(-1));
-  nextBtn.addEventListener('click', () => changeSlide(1));
-
-  window.addEventListener('resize', () => {
-    itemWidth    = calcItemWidth();
-    visibleCount = calcVisibleCount();
-    maxIndex     = items.length - visibleCount;
-    moveSlider();
+  Array.from(track.children).forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
   });
+}
 
-  moveSlider();
-});
+window.initClientsMarquee = initClientsMarquee;
+document.addEventListener('DOMContentLoaded', initClientsMarquee);

@@ -27,7 +27,12 @@ collections:
         fields:
           - { label: "عنوان القسم", name: "clients_title", widget: "string" }
           - { label: "وصف القسم", name: "clients_subtitle", widget: "text" }
-          - { label: "شعارات العملاء", name: "clients_logos", widget: "list", field: { label: "صورة العميل", name: "logo", widget: "image" } }
+          - label: "شعارات العملاء"
+            name: "clients_logos"
+            widget: "list"
+            fields:
+              - { label: "صورة العميل", name: "logo", widget: "image" }
+              - { label: "اسم العميل (Alt Text)", name: "alt", widget: "string" }
 
   # 3️⃣ Contact section
   - name: "contact"

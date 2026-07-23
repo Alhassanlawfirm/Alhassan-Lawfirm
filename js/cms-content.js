@@ -63,16 +63,17 @@ async function loadCMSContent() {
     const logosContainer = document.getElementById('clients-logos');
     if (logosContainer && Array.isArray(clients.clients_logos)) {
       logosContainer.innerHTML = '';
-      clients.clients_logos.forEach((url) => {
+      clients.clients_logos.forEach((item) => {
         const div = document.createElement('div');
         div.className = 'client-item';
         const img = document.createElement('img');
-        img.src = fixPath(url);
-        img.alt = 'عميل';
+        img.src = fixPath(item.logo);
+        img.alt = item.alt || 'عميل';
         img.loading = 'lazy';
         div.appendChild(img);
         logosContainer.appendChild(div);
       });
+      if (window.initClientsMarquee) window.initClientsMarquee();
     }
   }
 
