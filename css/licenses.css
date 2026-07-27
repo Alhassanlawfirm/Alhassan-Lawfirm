@@ -1,7 +1,7 @@
 /* Additional CSS for Licenses Section */
 
 .licenses-section {
-    background-color: var(--neutral-color);
+    background-color: var(--white);
     padding: var(--section-padding);
 }
 

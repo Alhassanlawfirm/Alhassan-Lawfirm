@@ -1433,3 +1433,48 @@ html, body {
         min-width: 0;
     }
 }
+
+/* ===== قسم الاعتمادات العالمية ===== */
+.global-accreditations {
+    padding: var(--section-padding, 70px 0);
+    background-color: var(--neutral-color);
+    background-image: linear-gradient(135deg, rgba(160, 125, 90, 0.05) 25%, transparent 25%), 
+                      linear-gradient(225deg, rgba(160, 125, 90, 0.05) 25%, transparent 25%),
+                      linear-gradient(45deg, rgba(160, 125, 90, 0.05) 25%, transparent 25%),
+                      linear-gradient(315deg, rgba(160, 125, 90, 0.05) 25%, var(--neutral-color) 25%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 0, 10px -10px, 0px 10px;
+}
+.global-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 35px;
+}
+.global-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 30px;
+    background: var(--white);
+    border: 1px solid #eaddc7;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(112, 87, 50, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.global-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(112, 87, 50, 0.16);
+}
+.global-badge img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+@media (max-width: 768px) {
+    .global-accreditations { padding: 50px 0; }
+    .global-badges { gap: 20px; }
+    .global-badge { padding: 18px 22px; }
+}
