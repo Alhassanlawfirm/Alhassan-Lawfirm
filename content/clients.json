@@ -1,14 +1,42 @@
 {
-  "clients_title": "عملاؤنا",
-  "clients_subtitle": "نفتخر بثقة عملائنا من الشركات والمؤسسات المرموقة",
-  "clients_logos": [
-    { "logo": "/images/clients/FC_GROUP_color_Full.png", "alt": "Five Colors Group" },
-    { "logo": "/images/clients/Cinegraph logo.png", "alt": "Cinegraph" },
-    { "logo": "/images/clients/khoyoot_logo.png", "alt": "خيوط المعازيب" },
-    { "logo": "/images/clients/ep_saudi_logo-1.png", "alt": "EP Saudi" },
-    { "logo": "/images/clients/alkorsi_logo-1.png", "alt": "الكرسي" },
-    { "logo": "/images/clients/dar_huwaija_logo-1.png", "alt": "دار حويجة" },
-    { "logo": "/images/clients/logo_close.png", "alt": "Close Media" },
-    { "logo": "/images/clients/amazing_clean.jpg", "alt": "Amazing Clean" }
-  ]
+    "clients_title": "عملاؤنا",
+    "clients_subtitle": "نفتخر بثقة عملائنا من الشركات والمؤسسات المرموقة",
+    "clients_logos": [
+        {
+            "logo": "/images/clients/FC_GROUP_color_Full.png",
+            "alt": "Five Colors Group"
+        },
+        {
+            "logo": "/images/clients/Cinegraph logo.png",
+            "alt": "Cinegraph"
+        },
+        {
+            "logo": "/images/clients/khoyoot_logo.png",
+            "alt": "خيوط المعازيب"
+        },
+        {
+            "logo": "/images/clients/ep_saudi_logo-1.png",
+            "alt": "EP Saudi"
+        },
+        {
+            "logo": "/images/clients/alkorsi_logo-1.png",
+            "alt": "الكرسي"
+        },
+        {
+            "logo": "/images/clients/dar_huwaija_logo-1.png",
+            "alt": "دار حويجة"
+        },
+        {
+            "logo": "/images/clients/logo_close.png",
+            "alt": "Close Media"
+        },
+        {
+            "logo": "/images/clients/amazing_clean.jpg",
+            "alt": "Amazing Clean"
+        },
+        {
+            "logo": "/images/clients/makzn7_logo.png",
+            "alt": "مخزن ٧"
+        }
+    ]
 }
