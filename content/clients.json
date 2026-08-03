@@ -37,6 +37,10 @@
         {
             "logo": "/images/clients/makzn7_logo.png",
             "alt": "مخزن ٧"
+        },
+        {
+            "logo": "/images/clients/3rdaction_logo.png",
+            "alt": "3rd action"
         }
     ]
 }
