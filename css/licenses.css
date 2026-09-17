@@ -7,7 +7,7 @@
 
 .licenses-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -61,5 +61,56 @@
 @media (max-width: 576px) {
     .licenses-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===== بطاقة مصفّي التركات المستطيلة العريضة ===== */
+.license-wide {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px 35px;
+    margin-top: 30px;
+    border-right: 5px solid var(--secondary-color);
+    transition: all 0.3s ease;
+    text-align: right;
+}
+.license-wide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.license-wide-icon {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.license-wide-icon i {
+    font-size: 36px;
+    color: var(--white);
+}
+.license-wide-content h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.license-wide-content p {
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+@media (max-width: 576px) {
+    .license-wide {
+        flex-direction: column;
+        text-align: center;
+        border-right: none;
+        border-top: 5px solid var(--secondary-color);
     }
 }
